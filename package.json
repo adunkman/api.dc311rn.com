@@ -1,0 +1,19 @@
+{
+  "name": "api.dc311rn.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adunkman/api.dc311rn.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adunkman/api.dc311rn.com/issues"
+  },
+  "homepage": "https://github.com/adunkman/api.dc311rn.com#readme"
+}

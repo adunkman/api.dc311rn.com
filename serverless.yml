@@ -1,0 +1,44 @@
+service: api-dc311rn-com
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: prod
+  region: us-east-1
+
+plugins:
+  - serverless-domain-manager
+
+custom:
+  customDomain:
+    domainName: api.dc311rn.com
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+
+functions:
+  getRoot:
+    handler: src/handlers/index.handler
+    events:
+      - http:
+          method: get
+          path: /
+          cors: true
+  getServiceRequests:
+    handler: src/handlers/service_requests/index.handler
+    events:
+      - http:
+          method: get
+          path: service_requests
+          cors: true
+  getServiceRequest:
+    handler: src/handlers/service_requests/get.handler
+    events:
+      - http:
+          method: get
+          path: service_requests/{id}
+          cors: true
+          request:
+            parameters:
+              paths:
+                id: true
